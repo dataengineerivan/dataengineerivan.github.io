@@ -258,11 +258,12 @@
 
     /* pipeline: the nodes connect left to right, then the last node keeps pulsing */
     .art-flow span::after { transform-origin: left; }
-    .card[data-pos="0"] .art-flow span { animation: pop .3s cubic-bezier(.3, 1.6, .5, 1) both; }
-    .card[data-pos="0"] .art-flow span:nth-child(1)::after { animation: write .25s ease .2s both; }
-    .card[data-pos="0"] .art-flow span:nth-child(2) { animation-delay: .4s; }
-    .card[data-pos="0"] .art-flow span:nth-child(2)::after { animation: write .25s ease .6s both; }
-    .card[data-pos="0"] .art-flow span:nth-child(3) { animation: pop .45s cubic-bezier(.3, 1.6, .5, 1) 1s both, ripple 2s ease-out 1.6s infinite; }
+    /* same timing as cards I and II: each step .7s on the same curve, staggered so it's all done in about a second */
+    .card[data-pos="0"] .art-flow span { animation: pop .7s cubic-bezier(.2, .8, .2, 1) both; }
+    .card[data-pos="0"] .art-flow span:nth-child(1)::after { animation: write .7s cubic-bezier(.2, .8, .2, 1) .09s both; }
+    .card[data-pos="0"] .art-flow span:nth-child(2) { animation-delay: .18s; }
+    .card[data-pos="0"] .art-flow span:nth-child(2)::after { animation: write .7s cubic-bezier(.2, .8, .2, 1) .27s both; }
+    .card[data-pos="0"] .art-flow span:nth-child(3) { animation: pop .7s cubic-bezier(.2, .8, .2, 1) .36s both, ripple 2s ease-out 1.2s infinite; }
     @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
     @keyframes ripple { 0% { box-shadow: 0 0 0 0 rgba(223, 255, 0, .7); } 100% { box-shadow: 0 0 0 18px rgba(223, 255, 0, 0); } }
 
@@ -272,14 +273,14 @@
     .card[data-pos="0"] .art-net {
       -webkit-mask: conic-gradient(#000 var(--sweep), transparent 0);
               mask: conic-gradient(#000 var(--sweep), transparent 0);
-      animation: drawring 1s cubic-bezier(.65, 0, .35, 1) .15s both;
+      animation: drawring .9s cubic-bezier(.2, .8, .2, 1) both;
     }
     @keyframes drawring { from { --sweep: 0deg; } to { --sweep: 360deg; } }
     .art-net i {
       position: absolute; width: 20px; height: 20px; border-radius: 50%; background: var(--lava);
       top: 14.6%; right: 14.6%; margin: -10px -10px 0 0;
     }
-    .card[data-pos="0"] .art-net i { animation: pop .4s cubic-bezier(.3, 1.6, .5, 1) 1.2s both; }
+    .card[data-pos="0"] .art-net i { animation: pop .7s cubic-bezier(.2, .8, .2, 1) .36s both; }
 
     .controls { display: flex; justify-content: center; align-items: center; gap: 1.2rem; margin-top: 1.8rem; }
     .controls button {
