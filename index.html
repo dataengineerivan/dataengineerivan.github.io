@@ -263,7 +263,7 @@
     .card[data-pos="0"] .art-flow span:nth-child(1)::after { animation: write .7s cubic-bezier(.2, .8, .2, 1) .09s both; }
     .card[data-pos="0"] .art-flow span:nth-child(2) { animation-delay: .18s; }
     .card[data-pos="0"] .art-flow span:nth-child(2)::after { animation: write .7s cubic-bezier(.2, .8, .2, 1) .27s both; }
-    .card[data-pos="0"] .art-flow span:nth-child(3) { animation: pop .7s cubic-bezier(.2, .8, .2, 1) .36s both, ripple 2s ease-out 1.2s infinite; }
+    .card[data-pos="0"] .art-flow span:nth-child(3) { animation: pop .9s cubic-bezier(.2, .8, .2, 1) .5s both, ripple 2s ease-out 1.5s infinite; }
     @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
     @keyframes ripple { 0% { box-shadow: 0 0 0 0 rgba(223, 255, 0, .7); } 100% { box-shadow: 0 0 0 18px rgba(223, 255, 0, 0); } }
 
@@ -273,14 +273,14 @@
     .card[data-pos="0"] .art-net {
       -webkit-mask: conic-gradient(#000 var(--sweep), transparent 0);
               mask: conic-gradient(#000 var(--sweep), transparent 0);
-      animation: drawring .9s cubic-bezier(.2, .8, .2, 1) both;
+      animation: drawring 1.4s cubic-bezier(.45, 0, .25, 1) both;
     }
     @keyframes drawring { from { --sweep: 0deg; } to { --sweep: 360deg; } }
     .art-net i {
       position: absolute; width: 20px; height: 20px; border-radius: 50%; background: var(--lava);
       top: 14.6%; right: 14.6%; margin: -10px -10px 0 0;
     }
-    .card[data-pos="0"] .art-net i { animation: pop .7s cubic-bezier(.2, .8, .2, 1) .36s both; }
+    .card[data-pos="0"] .art-net i { animation: pop .7s cubic-bezier(.2, .8, .2, 1) 1.15s both; }
 
     .controls { display: flex; justify-content: center; align-items: center; gap: 1.2rem; margin-top: 1.8rem; }
     .controls button {
